@@ -1,0 +1,112 @@
+{
+  "v1.32.0": {
+    "iCTRL.ipa": {
+      "app_name": "iCTRL",
+      "bundle_id": "com.openminis.ictrl",
+      "min_os": "16.0",
+      "upstream": {
+        "id": 623783932,
+        "size": 8829102,
+        "updated_at": "2026-10-09T03:33:13Z"
+      }
+    },
+    "iCTRLUITests-Runner.ipa": {
+      "app_name": "iCTRLUITests-Runner",
+      "bundle_id": "com.openminis.ictrl.uitests.xctrunner",
+      "min_os": "17.0",
+      "upstream": {
+        "id": 623783931,
+        "size": 1033657,
+        "updated_at": "2026-10-09T03:33:11Z"
+      }
+    }
+  },
+  "v1.96.1": {
+    "iCTRL.ipa": {
+      "app_name": "iCTRL",
+      "bundle_id": "com.openminis.ictrl",
+      "min_os": "16.0",
+      "upstream": {
+        "id": 631133707,
+        "size": 8475902,
+        "updated_at": "2026-10-11T15:46:39Z"
+      }
+    },
+    "iCTRLUITests-Runner.ipa": {
+      "app_name": "iCTRLUITests-Runner",
+      "bundle_id": "com.openminis.ictrl.uitests.xctrunner",
+      "min_os": "17.0",
+      "upstream": {
+        "id": 631133702,
+        "size": 1462609,
+        "updated_at": "2026-10-11T15:46:36Z"
+      }
+    }
+  },
+  "v1.97.0": {
+    "iCTRL.ipa": {
+      "app_name": "iCTRL",
+      "bundle_id": "com.openminis.ictrl",
+      "min_os": "16.0",
+      "upstream": {
+        "id": 635718916,
+        "size": 8507681,
+        "updated_at": "2026-10-13T03:08:11Z"
+      }
+    },
+    "iCTRLUITests-Runner.ipa": {
+      "app_name": "iCTRLUITests-Runner",
+      "bundle_id": "com.openminis.ictrl.uitests.xctrunner",
+      "min_os": "17.0",
+      "upstream": {
+        "id": 635718915,
+        "size": 1490637,
+        "updated_at": "2026-10-13T03:08:07Z"
+      }
+    }
+  },
+  "v1.97.1": {
+    "iCTRL.ipa": {
+      "app_name": "iCTRL",
+      "bundle_id": "com.openminis.ictrl",
+      "min_os": "16.0",
+      "upstream": {
+        "id": 636832974,
+        "size": 8508624,
+        "updated_at": "2026-10-13T11:33:31Z"
+      }
+    },
+    "iCTRLUITests-Runner.ipa": {
+      "app_name": "iCTRLUITests-Runner",
+      "bundle_id": "com.openminis.ictrl.uitests.xctrunner",
+      "min_os": "17.0",
+      "upstream": {
+        "id": 636832977,
+        "size": 1490636,
+        "updated_at": "2026-10-13T11:33:29Z"
+      }
+    }
+  },
+  "v1.98.12": {
+    "iCTRL.ipa": {
+      "app_name": "iCTRL",
+      "bundle_id": "com.openminis.ictrl",
+      "min_os": "16.0",
+      "upstream": {
+        "id": 642612414,
+        "size": 8852699,
+        "updated_at": "2026-10-15T04:05:23Z"
+      }
+    },
+    "iCTRLUITests-Runner.ipa": {
+      "app_name": "iCTRLUITests-Runner",
+      "bundle_id": "com.openminis.ictrl.uitests.xctrunner",
+      "min_os": "17.0",
+      "upstream": {
+        "id": 642612412,
+        "size": 1631232,
+        "updated_at": "2026-10-15T04:05:21Z"
+      }
+    }
+  }
+}
