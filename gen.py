@@ -65,7 +65,7 @@ def gh(*args):
     return subprocess.run(["gh", *args], check=True, capture_output=True, text=True).stdout
 
 
-def mirror_release(rel):
+def mirror_release(rel, latest=False):
     """Ensure MIRROR has release `tag` with patched assets; return {asset: (url, size)}."""
     tag, version = rel["tag_name"], rel["tag_name"].lstrip("v")
     try:
@@ -92,7 +92,7 @@ def mirror_release(rel):
         files.append(dst)
     notes = f"Mirror of https://github.com/{UPSTREAM}/releases/tag/{tag} with CFBundleShortVersionString/CFBundleVersion set to {version}.\n\n" + (rel.get("body") or "")
     if existing is None:
-        gh("release", "create", tag, *files, "-R", MIRROR, "--title", f"iCTRL {version}", "--notes", notes[:100000])
+        gh("release", "create", tag, *files, "-R", MIRROR, "--title", f"iCTRL {version}", "--notes", notes[:100000], f"--latest={str(latest).lower()}")
     else:
         gh("release", "upload", tag, *files, "-R", MIRROR, "--clobber")
     r = api(f"https://api.github.com/repos/{MIRROR}/releases/tags/{tag}")
@@ -103,7 +103,7 @@ def main(out):
     repo = api(f"https://api.github.com/repos/{UPSTREAM}")
     releases = [r for r in api(f"https://api.github.com/repos/{UPSTREAM}/releases?per_page=30")
                 if not r["draft"] and not r["prerelease"]][:KEEP]
-    mirrored = {r["tag_name"]: mirror_release(r) for r in releases}
+    mirrored = {r["tag_name"]: mirror_release(r, i == 0) for i, r in enumerate(releases)}
 
     apps = []
     for asset_name, meta in APPS.items():
