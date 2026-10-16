@@ -16,6 +16,8 @@ jobs:
       - name: Generate source
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MIRROR_REPO: ${{ github.repository }}
         run: python3 gen.py ictrl-source.json
       - name: Commit if changed
         run: |
