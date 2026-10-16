@@ -1,0 +1,27 @@
+name: Update iCTRL source
+on:
+  schedule:
+    - cron: "17 */3 * * *"   # every 3 hours
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Generate source
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 gen.py ictrl-source.json
+      - name: Commit if changed
+        run: |
+          if git diff --quiet; then echo "no change"; exit 0; fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
+          git add ictrl-source.json
+          git commit -m "Update iCTRL source $(python3 -c "import json;print(json.load(open('ictrl-source.json'))['apps'][0]['version'])")"
+          git push
